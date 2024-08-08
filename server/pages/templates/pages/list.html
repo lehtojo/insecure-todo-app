@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Todos</title>
+</head>
+
+<body>
+    <h1>{{name}}</h1>
+
+    <form action='/' method="GET">
+        <input type="submit" value="Back" />
+    </form>
+
+    <ul>
+        {% for item in items %}
+            <li>
+                {{item.text|safe}}
+
+                <form action='remove/{{item.id}}/' method="POST" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="submit" value="Remove" />
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add</h2>
+    <form action='add/' method="POST">
+        {% csrf_token %}
+        <span>Text:</span>
+        <input type="text" name="text" />
+        <input type="submit" value="Add" />
+    </form>
+</body>
+
+</html>
