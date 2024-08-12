@@ -47,6 +47,7 @@ def removeView(request):
 	return redirect('/')
 
 
+# Remove "@csrf_exempt" to protect against CSRF (fix)
 @login_required
 @csrf_exempt
 def addItemView(request, list_id):
@@ -68,6 +69,7 @@ def addItemView(request, list_id):
 	return redirect(f'/list/{list_id}')
 
 
+# Remove "@csrf_exempt" to protect against CSRF (fix)
 @login_required
 @csrf_exempt
 def removeItemView(request, list_id, item_id):

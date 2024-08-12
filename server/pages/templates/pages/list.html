@@ -15,6 +15,7 @@
     <ul>
         {% for item in items %}
             <li>
+                <!-- Remove "|safe" from the line below to prevent injection (fix) -->
                 {{item.text|safe}}
 
                 <form action='remove/{{item.id}}/' method="POST" style="display: inline;">
