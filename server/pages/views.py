@@ -11,7 +11,7 @@ normal_text_pattern = r'^[a-zA-Z0-9\s.,!?-]*$'
 def listView(request, list_id):
 	list = List.objects.get(id=list_id)
 
-	# Verifies the requesting user owns the list
+	# Verifies the requesting user owns the list (fix)
 	# if list.user != request.user:
 	# 	return HttpResponseBadRequest("Permission denied")
 
@@ -23,7 +23,7 @@ def listView(request, list_id):
 def createView(request):
 	name = request.POST.get('name')
 
-	# Verifies the list name doesn't contain illegal characters
+	# Verifies the list name doesn't contain illegal characters (fix)
 	# if not re.match(normal_text_pattern, name):
 	# 	return HttpResponseBadRequest("Illegal list name")
 
@@ -38,7 +38,7 @@ def removeView(request):
 	id = request.POST.get('id')
 	list = List.objects.get(id=id)
 
-	# Verifies the requesting user owns the list
+	# Verifies the requesting user owns the list (fix)
 	# if list.user != request.user:
 	# 	return HttpResponseBadRequest("Permission denied")
 
@@ -52,13 +52,13 @@ def removeView(request):
 def addItemView(request, list_id):
 	text = request.POST.get('text')
 
-	# Verifies the task item text doesn't contain illegal characters
+	# Verifies the task item text doesn't contain illegal characters (fix)
 	# if not re.match(normal_text_pattern, text):
 	# 	return HttpResponseBadRequest("Illegal item text")
 
 	list = List.objects.get(id=list_id)
 
-	# Verifies the requesting user owns the list
+	# Verifies the requesting user owns the list (fix)
 	# if list.user != request.user:
 	# 	return HttpResponseBadRequest("Permission denied")
 
@@ -73,7 +73,7 @@ def addItemView(request, list_id):
 def removeItemView(request, list_id, item_id):
 	item = ListItem.objects.get(id=item_id)
 
-	# Verifies the requesting user owns the list
+	# Verifies the requesting user owns the list (fix)
 	# if item.list.user != request.user:
 	# 	return HttpResponseBadRequest("Permission denied")
 
