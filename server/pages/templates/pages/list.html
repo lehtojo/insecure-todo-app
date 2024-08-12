@@ -18,7 +18,7 @@
                 {{item.text|safe}}
 
                 <form action='remove/{{item.id}}/' method="POST" style="display: inline;">
-                    <!-- Missing CSRF token -->
+                    <!-- Missing CSRF token, replace this line with "{% csrf_token %}" (fix) -->
                     <input type="submit" value="Remove" />
                 </form>
             </li>
@@ -27,7 +27,7 @@
 
     <h2>Add</h2>
     <form action='add/' method="POST">
-        <!-- Missing CSRF token -->
+        <!-- Missing CSRF token, replace this line with "{% csrf_token %}" (fix) -->
         <span>Text:</span>
         <input type="text" name="text" />
         <input type="submit" value="Add" />
