@@ -106,9 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-PASSWORD_HASHERS = [
-    'server.config.hasher.InsecurePasswordHasher',
-]
+PASSWORD_HASHERS = [ 'server.config.hasher.InsecurePasswordHasher' ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
