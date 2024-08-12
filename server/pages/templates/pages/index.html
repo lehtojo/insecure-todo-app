@@ -24,7 +24,7 @@
 
     <h2>Create</h2>
     <form action='create/' method="POST">
-        <!-- Missing CSRF token -->
+        {% csrf_token %}
         <span>Name:</span>
         <input type="text" name="name" />
         <input type="submit" value="Create" />
